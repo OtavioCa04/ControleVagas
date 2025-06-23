@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Vaga</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cadastrar Nova Vaga</h1>
+        <form id="vaga-form">
+            <input type="text" id="empresa" placeholder="Empresa" required>
+            <input type="text" id="cargo" placeholder="Cargo" required>
+            <input type="date" id="dataCandidatura" required>
+            <input type="number" id="salario" placeholder="Salário" step="0.01" required>
+            <input type="text" id="status" placeholder="Status" required>
+            <textarea id="descricao" placeholder="Descrição" required></textarea>
+            <button type="submit">Cadastrar Vaga</button>
+        </form>
+        <p><a href="vagas.html">Ver Vagas Cadastradas</a></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
