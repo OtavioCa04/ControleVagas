@@ -8,7 +8,7 @@ Repository: Interface que estende JpaRepository, permitindo operações básicas
 Service: Camada opcional para centralizar regras de negócio relacionadas às vagas.
 Controller: Camada responsável por expor a API RESTful com endpoints para criar, listar, buscar, atualizar e deletar vagas.
 
-O banco de dados MySQL é configurado no application.properties, e as tabelas são geradas automaticamente com spring.jpa.hibernate.ddl-auto=update.
+O banco de dados MySQL é configurado no application.properties, e as tabelas são geradas automaticamente.
 
 Frontend (HTML + CSS + JavaScript)
 
