@@ -13,8 +13,9 @@ services:
       - mysql_data:/var/lib/mysql
 
   backend:
-    image: 593358960513.dkr.ecr.sa-east-1.amazonaws.com/appvagas:backend
     container_name: vagas-backend
+    build:
+      context: ./back
     depends_on:
       - mysql
     ports:
@@ -26,8 +27,9 @@ services:
     restart: always
 
   frontend:
-    image: 593358960513.dkr.ecr.sa-east-1.amazonaws.com/appvagas:frontend
     container_name: vagas-frontend
+    build:
+      context: ./front
     ports:
       - "80:80"
     depends_on:
