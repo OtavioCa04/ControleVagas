@@ -15,7 +15,7 @@ services:
   backend:
     container_name: vagas-backend
     build:
-      context: ./back
+      context: ./back-vagas
     depends_on:
       - mysql
     ports:
@@ -29,7 +29,7 @@ services:
   frontend:
     container_name: vagas-frontend
     build:
-      context: ./front
+      context: ./front-vagas
     ports:
       - "80:80"
     depends_on:
