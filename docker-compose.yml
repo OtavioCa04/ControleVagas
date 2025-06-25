@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-vagas
+    environment:
+      MYSQL_ROOT_PASSWORD: otavio123
+      MYSQL_DATABASE: vagasdb
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  backend:
+    image: 593358960513.dkr.ecr.sa-east-1.amazonaws.com/appvagas:backend
+    container_name: vagas-backend
+    depends_on:
+      - mysql
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/vagasdb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: otavio123
+    restart: always
+
+  frontend:
+    image: 593358960513.dkr.ecr.sa-east-1.amazonaws.com/appvagas:frontend
+    container_name: vagas-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: always
+
+volumes:
+  mysql_data:

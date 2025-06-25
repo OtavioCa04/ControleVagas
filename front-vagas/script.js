@@ -1,4 +1,5 @@
-const apiUrl = 'http://localhost:8080/vagas';
+const apiUrl = 'http://backend:8080/vagas';
+
 
 document.addEventListener('DOMContentLoaded', () => {
     if (document.getElementById('vaga-form')) {
